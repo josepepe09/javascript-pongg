@@ -31,7 +31,7 @@ function draw(){
 
 function criaBolinha(xBolinha, yBolinha, tamBolinha) {
   //aqui criamos a bolinha e a pintamos de vermelho (adiçao do professor)
-    fill ("red")
+    fill ("red");
     circle (xBolinha,yBolinha,tamBolinha);
 }
 
@@ -52,7 +52,7 @@ function bolinhaBorda(){
 }
 //funcao responsavel por criar o retangulo que representa a maquete
 function criaRaquete(xRaquete, yRaquete, larguraRaquete, alturaRaquete) {
-    fill("blue")|;
+    fill("blue");
     rect(xRaquete, yRaquete, larguraRaquete, alturaRaquete);
 }
 //funcao responsavel por movimentar a raquete
