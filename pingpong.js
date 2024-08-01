@@ -2,7 +2,7 @@
 let xBolinha = 300;
 let yBolinha = 200;
 let tamBolinha = 25;
-let raioBolinha = tamanhoBolinha/2;
+let raioBolinha = tamBolinha/2;
 
 //aqui estou configurando a velocidade da bolinha
 let xvelocidadeBolinha = 6;
@@ -35,13 +35,14 @@ function criaBolinha(xBolinha, yBolinha, tamBolinha) {
     circle (xBolinha,yBolinha,tamBolinha);
 }
 
-//função move bolinha
-function moveBolinha(){
+//função responsavel pela movimentaçao da bolinha
+function movimentaBolinha() {
+    
     xBolinha = xvelocidadeBolinha + xBolinha;
     yBolinha = yvelocidadeBolinha + yBolinha;
 }
-
-function Borda(){
+///funçao responsavel pela bolinha nao sair fora do "campo/mesa"
+function bolinhaBorda(){
     if (xBolinha > width || xBolinha < 0){
         xvelocidadeBolinha *= -1;
     }
