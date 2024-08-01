@@ -2,10 +2,17 @@
 let xBolinha = 300;
 let yBolinha = 200;
 let tamBolinha = 25;
+let raioBolinha = tamanhoBolinha/2;
 
 //config velocidade bolinha
 let xvelocidadeBolinha = 6;
 let yvelocidadeBolinha = 6;
+
+//aqui estou configurando a raquete
+let xRaquete = 5;
+let yRaquete = 150;
+let larguraRaquete = 10;
+let alturaRaquete = 90;
 
 function setup(){
     //aqui vou criar minha "mesa"
@@ -23,6 +30,10 @@ function draw(){
     moveBolinha();
     //chamando a borda
     Borda();
+    criaRaquete(xRaquete, yRaquete, larguraRaquete, alturaRaquete);
+    movimentaRaquete();
+    colideRaquete();
+    
 }
 
 //função bolinha
@@ -43,4 +54,30 @@ function Borda(){
     if (yBolinha > height || yBolinha < 0){
         yvelocidadeBolinha *= -1;
     }
+}
+//funcao responsavel por criar o retangulo que representa a maquete
+function criaRaquete(xRaquete, yRaquete, larguraRaquete, alturaRaquete) {
+    fill("blue")|;
+    rect(xRaquete, yRaquete, larguraRaquete, alturaRaquete);
+}
+//funcao responsavel por movimentar a raquete
+function movimentaRaquete() {
+
+    if(keyIsDown(UP_ARROW)){
+        yRaquete -= 10;
+    }
+    if(keyIsDown(DOWN_ARROW)){
+        yRaquete += 10;
+    }
+
+}
+//funcao responsavel por quanto a bolinha bater na raquete, retornar em direçao contraria
+function colideRaquete(){
+
+    if(xBolinha - raioBolinha < xRaquete + larguraRaquete && yBolinha - raioBolinha < yRaquete + alturaRaquete && yBolinha + raioBolinha > yRaquete){
+
+        xvelocidadeBolinha *= -1;
+
+    }
+
 }
