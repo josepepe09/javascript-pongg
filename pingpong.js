@@ -4,7 +4,7 @@ let yBolinha = 200;
 let tamBolinha = 25;
 let raioBolinha = tamanhoBolinha/2;
 
-//config velocidade bolinha
+//aqui estou configurando a velocidade da bolinha
 let xvelocidadeBolinha = 6;
 let yvelocidadeBolinha = 6;
 
@@ -15,29 +15,23 @@ let larguraRaquete = 10;
 let alturaRaquete = 90;
 
 function setup(){
-    //aqui vou criar minha "mesa"
     createCanvas(600,400);
 }
-
+//area de desenho
 function draw(){
-    //função responsável pelo "desenho e animação da mesa"
-    //aqui vou por a cor da "mesa"
-    //A cor da mesa é em rgb
     background(128,128,0); 
-    //chamando a função cria bolinha para criar a bolinha
+    //chamada das funçoes
     criaBolinha(xBolinha, yBolinha, tamBolinha);
-    //chamando a função mov bolinha
-    moveBolinha();
-    //chamando a borda
-    Borda();
+    movimentaBolinha();
+    bolinhaBorda();
     criaRaquete(xRaquete, yRaquete, larguraRaquete, alturaRaquete);
     movimentaRaquete();
     colideRaquete();
-    
 }
 
-//função bolinha
-function criaBolinha(xBolinha, yBolinha,tamBolinha){
+function criaBolinha(xBolinha, yBolinha, tamBolinha) {
+  //aqui criamos a bolinha e a pintamos de vermelho (adiçao do professor)
+    fill ("red")
     circle (xBolinha,yBolinha,tamBolinha);
 }
 
